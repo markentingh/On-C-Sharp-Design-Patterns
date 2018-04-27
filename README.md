@@ -1,17 +1,17 @@
 # On C#
 This repository was created to help solidify my understanding of C# and all of its glory. Here, you will find extensive knowledge that I have compiled about many important subjects that will ultimately make you an enterprise-level engineer.
 
-###  1. Design Patterns
-My research began with design patterns in C#, since this is the most basic and useful information I had to study. There are 23 design patterns identified by four computer scientists who wrote a book called **Design Patterns: Elements of Reusable Object-Oriented Software**. I have described each pattern, provided working examples within a Visual Studio solution, and have included any helpful information that I have found about each pattern that can help clarify its use case, limitations, and requirements.
+### 1. C# Basics
+I wanted to cover the basics in .NET because in many interviews, I couldn't answer simple questions, such as "What is an example of a value type and a reference type?".
 
-### 2. SOLID Architecture
+###  2. Design Patterns
+There are 23 design patterns identified by four computer scientists who wrote a book called **Design Patterns: Elements of Reusable Object-Oriented Software**. I have described each pattern, provided working examples within a Visual Studio solution, and have included any helpful information that I have found about each pattern that can help clarify its use case, limitations, and requirements.
+
+### 3. SOLID Architecture
 These principles were created to provide developers with a way to manage most software design problems. The SOLID principles provides a way to create loosely coupled and encapsulated code for use in enterprise-level projects.
 
-### 3. Architectural Patterns
+### 4. Architectural Patterns
 There are many *architectural styles* used to design modern software, and in order to make the correct decisions when planning out the architecture of an application, one must fully understand each of the many available styles that can be implemented. In most cases, a combination of styles will be used to develop an application.
-
-### 4. C# Basics
-I wanted to cover the basics in .NET because in many interviews, I couldn't answer simple questions, such as "What is an example of a value type and a reference type?".
 
 ### 5. Generics
 Generics are a very powerful feature in .NET and allows me to develop methods that can take any object type as arguments, without incurring the cost of runtime casts or boxing operations. In fact, I use generics every day with `List<T>` and `Dictionary<T key, T value>`

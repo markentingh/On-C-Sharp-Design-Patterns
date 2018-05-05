@@ -20,6 +20,36 @@ class User
 }
 ```
 
+### Data Types
+.NET has many predefined data types with specified ranges. An alias can be used to define a data type variable, or `var` along with an initial value could also define a data type variable at compile time.
+
+```
+int x; //Int32
+var y = 5; //Int32
+double a; //Double (recommended use)
+var b = 0.5; //Double
+System.Double c; //Double (not recommended use)
+```
+
+Data Type | Alias | .NET Type| Range
+---|---|---|---
+Byte|byte|System.Byte|0 to 255
+SByte|sbyte|System.SByte|-128 to 127
+Int32|int|System.Int32|-2,147,483,648 to 2,147,483,647
+UInt32|uint|System.UInt32|0 to 4294967295
+Int16|short|System.Int16|-32,768 to 32,767
+UInt16|ushort|System.UInt16|0 to 65,535
+Int64|long|System.Int64|-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+UInt64|ulong|System.UInt64|0 to 18,446,744,073,709,551,615
+Single|float|System.Single|-3.402823e38 to 3.402823e38
+Double|double|System.Double|-1.79769313486232e308 to 1.79769313486232e308
+Char|char|System.Char|Unicode symbols used in text
+Boolean|bool|System.Boolean|True or False
+Object|object|System.Object|
+String|string|System.String|
+Decimal|decimal|System.Decimal|(+ or -) 1.0 x 10e-28 to 7.9 x 10e28
+DateTime|DateTime|System.DateTime|0:00:00am 1/1/01 to 11:59:59pm 12/31/9999
+
 ### Value Types & Reference Types
 
 ##### Value Types
@@ -31,6 +61,109 @@ When creating a Value Type, a single space in memory is allocated to store the v
 Classes, Objects, Arrays, Indexers, Interfaces, and pretty much anything that isn't a Value Type is a Reference Type.
 
 Reference Types holds a reference, or address, in memory that points to the object, but is not the object itself. Because of this, assigning multiple variables to the same object simply creates references to the same object in memory. A Reference Type is stored within the *heap* and is handled by the *Garbage Collector*.
+
+---
+
+### Operators
+
+Operators that take one operand, such as the *increment* operator (`++`) or `new` are **unary operators**.
+
+Operators that take two operands, such as arithmetic operators (`+`, `*`, `/`), are **binary operators**.
+
+The conditional operator (`?:`) is the only **ternary operator** in C#
+
+##### Primary Operators
+
+Expression|Description
+---|---
+`x.y`|Member access
+`x?.y`|Conditional member access
+`f(x)`|Method / delegate invocation
+`a[x]`|Array and indexer access
+`a?[x]`|Conditional array and indexer access
+`x++`|Post-increment
+`x--`|Post-decrement
+`new T(...)`|Object / delegate creation
+`new T(...){...}`|Object creation with initializer
+`new T[...]`|Array creation
+`typof(T)`|Obtain System.Type object for T
+`checked(x)`|Evaluate expression in checked context
+`unchecked(x)`|Evaluate expression in unchecked context
+`default(T)`|Obtain default value of type T
+`delegate{}`|Anonymous method
+
+
+##### Unary Operators
+
+Expression|Description
+---|---
+`+x`|Indentity
+`-x`|Negation
+`!x`|Logical negation
+`~x`|Bitwise negation
+`++x`|Pre-increment
+`--x`|Pre-decrement
+`(T)x`|Explicit convert x to type T
+
+##### Multiplicative Operators
+
+Expression|Description
+---|---
+`*`|Multiplication
+`/`|Division
+`%`|Remainder
+
+##### Additive Operators
+
+Expression|Description
+---|---
+`x + y`|Addition, string concatenation, delegate / event combination
+`x - y`|Subtraction, delegate / event removal
+
+##### Shift Operators
+
+Expression|Description
+---|---
+`x << y`|Shift left
+`x >> y`|Shift right
+
+##### Relational & Type Operators
+
+Expression|Description
+---|---
+`x < y`|Less than
+`x > y`|Greater than
+`x <= y`|Less than or equal
+`x >= y`|Greater than or equal
+`x is T`|Returns true if x is a T, false otherwise.
+`x as T`|Return x typed as T, or null if x is not a T
+
+##### Equality Operators
+
+Expression|Description
+---|---
+`x == y`|Equal
+`x != y`|Not equal
+
+##### Logical, Conditional and Null Operators
+
+Category|Expression|Description
+---|---|---
+Logical AND|`x & y`|Integer bitwise AND, boolean logical AND
+Logical XOR|`x ^ y`|Integer bitwise XOR, boolean logical XOR
+Logical OR|`x|y`|Integer bitwise OR, boolean logical OR
+Conditional AND|`x&&y`|Evaluates y only if x is true
+Conditional OR|`x||y`|Evaluates y only if x is false
+Null coalescing|`x ?? y`|Evaluates to y if x is null, to x otherwise
+Conditional|`x ? y : z`|Evaluates to y if x is true, z if x is false
+
+##### Assignment and Anonymous Operators
+
+Expression|Description
+---|---
+`=`|Assignment
+`x op= y`|Compound assignment. Supports these operators: `+=`, `-=`, `*=`, `/=`, `%=`, `&=`, `|=`, `!=`, `<<=`, `>>=`
+`(T x) => y`|Anonymous function (lambda expression)
 
 ---
 
@@ -77,6 +210,9 @@ An abstract method is a method without a body, and is implimented by a derived c
 ```
 public abstract int Calculate();
 ```
+
+#### Static Modifier
+Declares a member that belongs to the type itelf instead of belonging to a specific object. Static methods in one class can be called from another class without having to create an instance of the class. If a class is declared static, then all methods within the class must also be declared static.
 
 #### Virtual & Override Modifiers
 A virtual modifier allows derived classes to override members & methods of a class. In order to extend any *virtual* or *abstract* type, an override modifier is needed.
@@ -188,3 +324,22 @@ namespace MyAppo
 	}
 }
 ```
+
+#### ReadOnly Modifier
+Declares a field that can only be assigned values as part of the declaration or within the constructor of the same class.
+
+```
+class Company
+{
+	private readonly int Id;
+
+	public Company (int companyId)
+	{
+		Id = companyId;
+	}
+}
+
+class Employee
+{
+	public readonly string columnName { get; } = "employee";
+}

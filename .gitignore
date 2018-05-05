@@ -9,7 +9,7 @@
 *.bak
 *.jfm
 *.sh
-/.vs/
+**/.vs/
 temp.cs
 
 # Build results

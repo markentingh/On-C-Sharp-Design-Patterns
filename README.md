@@ -19,8 +19,8 @@ Generics are a very powerful feature in .NET and allows me to develop methods th
 ### 6. Delegates
 I've used LINQ for a long time without fully understanding how powerful lambda expressions were. Now, I am able to develop my own libraries that utilize functional programming techniques (and so can you!).
 
-### 7. Parellel Threads
-This is an important topic since it allows me to write optimized code that can take full advantage of my CPU. I have discussed `Parellel.For` & `Parellel.ForEach`, `System.Threading` along with `async` and `await`, and have given examples on how to properly use them in many different use cases.
+### 7. Multi-threading Techniques
+This is an important topic since it allows me to write optimized code that can take full advantage of my CPU. I have discussed `Parellel.For` & `Parellel.ForEach`, `System.Threading` along with `async`, `await` & `Task`, and have given examples on how to properly use them in many different use cases.
 
 ### 8. Sorting & Filtering
 There are many types of sorting & filtering algorithms that can save many resources and processing time (usually measured in milliseconds). The algorithms I talk about have been implemented in many other languages other than C#, but I have either found a working example in C#, or translated it myself.
@@ -31,7 +31,7 @@ Most programming languages uses a garbage collection system in order to make mem
 ### 10. GPU Utilization
 Many mathmatical calculations that involve large amounts of data can be offloaded onto the GPU to relieve stress on the CPU as well as speed up the processing time for these calculations. I've provided some examples on how this can be done, along with a list of use cases for offloading math to the GPU.
 
-### 11. Unit Testing
+### 11. Test-Driven Development
 I've never taken the time to create unit tests before, but after many years of wondering how well my code will perform (if at all), I've finally figured out how to test my code with millions of hypothetical users / requests to see where limitations and security flaws exist. Finally, I can watch my code perform better after making optimizations and iterating through unit test results.
 
 ### 12. Performance Optimizations

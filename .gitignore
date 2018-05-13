@@ -10,6 +10,7 @@
 *.jfm
 *.sh
 **/.vs/
+**/packages/
 temp.cs
 
 # Build results
